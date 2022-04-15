@@ -1,20 +1,22 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<div class="d-flex flex-column m-4 ">
+    <h3 class="text-center text-white">Preços e consumos da Gasolina!!!</h3>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <div class="d-flex flex-column">
+        <label for="preco" class="m-3 mt-3 text-white">Preço da Gasolina:</label>
+        <input type="number" placeholder="0" id="preco" [(ngModel)]="precoGasolina" />
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+        <label for="distancia" class="m-3 mt-3 text-white"> Distancia de Viagem:</label>
+        <input type="number" placeholder="0" id="distancia" [(ngModel)]="Distancia" />
+
+        <label for="consumo" class="m-3 mt-3 text-white"> Consumo do Carro:</label>
+        <input type="number" placeholder="0" id="consumo" [(ngModel)]="ConsumoGasolina" />
+
+        <button (click)="CalcularGasto()" class="btn btn-warning m-5 text-white">
+          Calcular
+        </button>
+    </div>
+    <h4 class="text-center text-white">Valor da gasolina: R$ {{precoGasolina}}</h4>
+    <h4 class="text-center text-white">Distancia Percorrida: R$ {{Distancia}}</h4>
+    <h4 class="text-center text-white">Consumo de Gasolina: R$ {{ConsumoGasolina}}</h4>
+    <h4 class="text-center text-white">Total Gasto em Gasolina: R$ {{Total.toFixed(2)}}</h4>
+</div>
